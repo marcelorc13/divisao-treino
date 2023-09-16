@@ -1,11 +1,11 @@
-import Treino from "@/components/treino"
+import TreinoBody from "@/components/treino"    
 
 export const metadata = {
-    title: 'Treino'
+    title: 'Treino x'
 }
 
 export default function Treino() {
     return(
-        <Treino />
+        <TreinoBody  />
     )
 }

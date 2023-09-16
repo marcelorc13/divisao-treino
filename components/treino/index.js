@@ -1,9 +1,15 @@
 'use client'
 
-export default function Treino() {
+import { useRouter } from "next/navigation"
+
+export default function TreinoBody() {
+
+    const router = useRouter()
+    const { teste } = router.query
+
     return (
         <main>
-            Teste
+            <p>{teste}</p>
         </main>
     )
 }

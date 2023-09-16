@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 
 import { CgGym } from 'react-icons/cg'
 import { IoIosBasketball } from 'react-icons/io'
@@ -9,9 +9,25 @@ import { MdOutlineDirectionsRun } from 'react-icons/md'
 import { MdDirectionsBike } from 'react-icons/md'
 import { FaSwimmer } from 'react-icons/fa'
 import { RiBoxingFill } from 'react-icons/ri'
+import { userAgent } from 'next/server'
 
 
 export default function Divisao() {
+
+    const router = useRouter()
+
+    function HandleRelocate() {
+        const detalhes = {
+            valor1: '1',
+            valor2: '2',
+        }
+
+        router.push({
+            pathname: '/treino',
+            query: detalhes,
+        })
+
+    }
 
     return (
         <main className="flex flex-col items-center">
@@ -24,7 +40,7 @@ export default function Divisao() {
             {/* Usar rotas Dinâmicas */}
             <ul className='flex flex-col list-disc text-2xl'>
                 <li>
-                    <Link href={'/treino'}>Segunda-Feira</Link>
+                    <p onClick={HandleRelocate}>Segunda-Feira</p>
                 </li>
 
                 <li>
