@@ -1,15 +1,19 @@
 'use client'
 
-import { useRouter } from "next/navigation"
+import { useSearchParams } from 'next/navigation'
 
-export default function TreinoBody() {
+export default function TreinoBody(props) {
 
-    const router = useRouter()
-    const { teste } = router.query
+    const searchParams = useSearchParams()
+
+    const dia = searchParams.get('dia')
+    const musculos = searchParams.get('musculos')
+    const exercicios = searchParams.get('exercicios')
 
     return (
-        <main>
-            <p>{teste}</p>
+        <main className='flex flex-col items-center'>
+            <h1 className='text-4xl'>{dia} - {musculos}</h1>
+            <div>{exercicios}</div>
         </main>
     )
 }

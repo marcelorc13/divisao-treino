@@ -1,7 +1,6 @@
 'use client'
 
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
 
 import { CgGym } from 'react-icons/cg'
 import { IoIosBasketball } from 'react-icons/io'
@@ -10,24 +9,10 @@ import { MdDirectionsBike } from 'react-icons/md'
 import { FaSwimmer } from 'react-icons/fa'
 import { RiBoxingFill } from 'react-icons/ri'
 import { userAgent } from 'next/server'
+import Segunda from '../treinos/segunda'
 
 
 export default function Divisao() {
-
-    const router = useRouter()
-
-    function HandleRelocate() {
-        const detalhes = {
-            valor1: '1',
-            valor2: '2',
-        }
-
-        router.push({
-            pathname: '/treino',
-            query: detalhes,
-        })
-
-    }
 
     return (
         <main className="flex flex-col items-center">
@@ -40,33 +25,71 @@ export default function Divisao() {
             {/* Usar rotas Dinâmicas */}
             <ul className='flex flex-col list-disc text-2xl'>
                 <li>
-                    <p onClick={HandleRelocate}>Segunda-Feira</p>
+                    <Link href={{
+                        pathname: '/treino',
+                        query: {
+                            dia: 'Segunda-Feira',
+                            musculos: 'Perna Completa',
+                        }
+                    }}>Segunda-Feira : Perna Completa</Link>
                 </li>
 
                 <li>
-                    <Link href={'/treino'}>Terça-Feira</Link>
+                    <Link href={{
+                        pathname: '/treino',
+                        query: {
+                            dia: 'Terça-Feira',
+                            musculos: 'Peito & Bíceps / Panturrilha',
+                        }
+                    }}>Terça-Feira : Peito & Bíceps / Panturrilha</Link>
+                </li>
+                <li>
+                    <Link href={{
+                        pathname: '/treino',
+                        query: {
+                            dia: 'Quarta-Feira',
+                            musculos: 'Costas & Ombro',
+                        }
+                    }}>Quarta-Feira : Costas & Ombro</Link>
+                </li>
+                <li>
+                    <Link href={{
+                        pathname: '/treino',
+                        query: {
+                            dia: 'Quinta-Feira',
+                            musculos: 'Descanso / Panturrilha',
+                        }
+                    }}>Quinta-Feira : Descanso / Panturrilha</Link>
+                </li>
+                <li>
+                    <Link href={{
+                        pathname: '/treino',
+                        query: {
+                            dia: 'Sexta-Feira',
+                            musculos: 'Bíceps & Tríceps',
+                        }
+                    }}>Sexta-Feira : Bíceps & Tríceps</Link>
+                </li>
+                <li>
+                    <Link href={{
+                        pathname: '/treino',
+                        query: {
+                            dia: 'Sábado',
+                            musculos: 'Peito & Ombro / Panturrilha',
+                        }
+                    }}>Sábado : Peito & Ombro / Panturrilha</Link>
+                </li>
+                <li>
+                    <Link href={{
+                        pathname: '/treino',
+                        query: {
+                            dia: 'Domingo',
+                            musculos: 'Descanso',
+                        }
+                    }}>Domingo : Descanso</Link>
                 </li>
 
-                <li>
-                    <Link href={'/treino'}>Quarta-Feira</Link>
-                </li>
-
-                <li>
-                    <Link href={'/treino'}>Quinta-Feira</Link>
-                </li>
-
-                <li>
-                    <Link href={'/treino'}>Sexta-Feira</Link>
-                </li>
-
-                <li>
-                    <Link href={'/treino'}>Sábado</Link>
-                </li>
-
-                <li>
-                    <Link href={'/treino'}>Domingo</Link>
-                </li>
             </ul>
-        </main>
+        </main >
     )
 }

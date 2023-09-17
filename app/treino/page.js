@@ -1,7 +1,7 @@
 import TreinoBody from "@/components/treino"    
 
 export const metadata = {
-    title: 'Treino x'
+    title: 'Treino'
 }
 
 export default function Treino() {
