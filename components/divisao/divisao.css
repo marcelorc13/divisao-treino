@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-#dias li {
+.dias {
     @apply border border-black rounded-2xl bg-white px-2 text-lg md:text-3xl md:px-10 py-6 hover:scale-105 hover:text-white hover:bg-gray-900 transition duration-300;
 }
 
 .destacado {
-    @apply bg-black
+    @apply border border-black rounded-2xl bg-yellow-50 font-semibold px-2 text-lg md:text-3xl md:px-10 py-6 hover:scale-105 hover:text-white hover:bg-gray-900 transition duration-300;
 }

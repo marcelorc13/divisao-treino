@@ -25,12 +25,9 @@ export default function Divisao() {
 
         const dias = document.querySelectorAll('.dias')
 
-        const htmlDia = dias[diaHoje].children[0]
-
-
-        htmlDia.innerHTML = `&#9733; ${htmlDia.innerHTML} &#9733;`
+        dias[diaHoje].classList.remove('dias')
+        dias[diaHoje].classList.add('destacado')
     }
-
 
     return (
         <main className="flex flex-col items-center pb-10">
