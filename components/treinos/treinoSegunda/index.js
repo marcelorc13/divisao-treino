@@ -10,22 +10,17 @@ export default function TreinoPernaCompleto() {
                 </li>
 
                 <li>
-                    Leg 45°
+                    Agachamento Hack
                     <p>3 Séries</p>
                 </li>
 
                 <li>
-                    Agachamento Hack
-                    <p>2 Séries</p>
-                </li>
-
-                <li>
                     Cadeira Extensora
-                    <p>2 Séries</p>
+                    <p>3 Séries</p>
                 </li>
 
                 <li>
-                    Mesa Flexora
+                    Sissy Squats
                     <p>1 Série</p>
                 </li>
 

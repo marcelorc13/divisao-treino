@@ -1,21 +1,50 @@
 'use client'
-import TreinoPernaCompleto from '../treinos/treinoSegunda'
-
 import { useSearchParams } from 'next/navigation'
 import { useEffect } from 'react'
 import { useState } from 'react'
 
+import Descanso from '../treinos/descanso'
+import TreinoPernaCompleto from '../treinos/treinoSegunda'
+import TreinoPeitoBiceps from '../treinos/treinoTerca'
+import TreinoCostasOmbro from '../treinos/treinoQuarta'
+import TreinoPanturrilha from '../treinos/treinoQuinta'
+import TreinoBicepsTriceps from '../treinos/treinoSexta'
+import TreinoPeitoOmbro from '../treinos/treinoSábado'
+
 export default function TreinoBody() {
 
     useEffect(() => {
-        MostrarParams();
-    }, [''])
+        MostrarTreino();
+    }, [])
 
-
-    function MostrarParams() {
-        if (musculos == 'Perna Completa') {
-            const teste = <TreinoPernaCompleto />
-            setExercicios(teste)
+    function MostrarTreino() {
+        if (musculos == 'Descanso') {
+            const treino = <Descanso />
+            setExercicios(treino)
+        }
+        else if (musculos == 'Perna Completa') {
+            const treino = <TreinoPernaCompleto />
+            setExercicios(treino)
+        }
+        else if (musculos == 'Peito & Bíceps (Panturrilha)') {
+            const treino = <TreinoPeitoBiceps />
+            setExercicios(treino)
+        }
+        else if (musculos == 'Costas & Ombro') {
+            const treino = <TreinoCostasOmbro />
+            setExercicios(treino)
+        }
+        else if (musculos == 'Descanso (Panturrilha)') {
+            const treino = <TreinoPanturrilha />
+            setExercicios(treino)
+        }
+        else if (musculos == 'Bíceps & Tríceps') {
+            const treino = <TreinoBicepsTriceps />
+            setExercicios(treino)
+        }
+        else if (musculos == 'Peito & Ombro (Panturrilha)') {
+            const treino = <TreinoPeitoOmbro />
+            setExercicios(treino)
         }
     }
 
@@ -29,7 +58,8 @@ export default function TreinoBody() {
 
     return (
         <main className='flex flex-col items-center'>
-            <h1 className='text-2xl md:text-4xl text-center font-bold'>{dia} - {musculos}</h1>
+            <h1 className='text-xl md:text-2xl text-center font-semibold'>{dia}</h1>
+            <h1 className='text-3xl md:text-4xl text-center font-bold'>{musculos}</h1>
             <section className='w-full'>{exercicios}</section>
         </main>
     )

@@ -66,10 +66,10 @@ export default function Divisao() {
                         pathname: '/treino',
                         query: {
                             dia: 'Terça-Feira',
-                            musculos: 'Peito & Bíceps / Panturrilha',
+                            musculos: 'Peito & Bíceps (Panturrilha)',
                         }
                     }}>
-                        Terça-Feira : Peito & Bíceps / Panturrilha
+                        Terça-Feira : Peito & Bíceps (Panturrilha)
                     </Link>
                 </li>
                 <li className='dias'>
@@ -88,10 +88,10 @@ export default function Divisao() {
                         pathname: '/treino',
                         query: {
                             dia: 'Quinta-Feira',
-                            musculos: 'Descanso / Panturrilha',
+                            musculos: 'Descanso (Panturrilha)',
                         }
                     }}>
-                        Quinta-Feira : Descanso / Panturrilha
+                        Quinta-Feira : Descanso (Panturrilha)
                     </Link>
                 </li>
                 <li className='dias'>
@@ -110,10 +110,10 @@ export default function Divisao() {
                         pathname: '/treino',
                         query: {
                             dia: 'Sábado',
-                            musculos: 'Peito & Ombro / Panturrilha',
+                            musculos: 'Peito & Ombro (Panturrilha)',
                         }
                     }}>
-                        Sábado : Peito & Ombro / Panturrilha
+                        Sábado : Peito & Ombro (Panturrilha)
                     </Link>
                 </li>
             </ul>
