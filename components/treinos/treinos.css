@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#lista-exercicios {
+    @apply mt-8;
+}
+
+#lista-exercicios ul {
+    @apply flex flex-col gap-4;
+}
+
+#lista-exercicios ul li {
+    @apply border border-gray-900 bg-white rounded-xl mx-12 md:mx-44 lg:mx-60 py-1 flex flex-col items-center text-2xl font-semibold;
+}
+
+#lista-exercicios ul li p {
+    @apply text-base font-normal text-gray-500;
+}
