@@ -3,6 +3,11 @@ export default function TreinoPeitoOmbro() {
         <div id="lista-exercicios">
             <ul>
                 <li>
+                    Panturrilha no Hack
+                    <p>3 Séries</p>
+                </li>
+
+                <li>
                     Supino Inclinado com Halteres
                     <p>2 Séries</p>
                 </li>
@@ -25,11 +30,6 @@ export default function TreinoPeitoOmbro() {
                 <li>
                     Elevação Frontal com Halteres Sentado
                     <p>1 Série</p>
-                </li>
-
-                <li>
-                    Panturrilha no Hack
-                    <p>3 Séries</p>
                 </li>
             </ul>
         </div>

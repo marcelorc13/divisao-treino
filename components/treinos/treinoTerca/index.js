@@ -5,8 +5,13 @@ export default function TreinoPeitoBiceps() {
         <div id="lista-exercicios">
             <ul>
                 <li>
-                    Supino Inclinado com Haltéres
+                    Panturrilha Sentado
                     <p>3 Séries</p>
+                </li>
+
+                <li>
+                    Supino Inclinado com Haltéres
+                    <p>2 Séries</p>
                 </li>
 
                 <li>
@@ -27,11 +32,6 @@ export default function TreinoPeitoBiceps() {
                 <li>
                     Rosca no Banco Inclinado Máquina
                     <p>1 Série</p>
-                </li>
-
-                <li>
-                    Panturrilha Sentado
-                    <p>3 Séries</p>
                 </li>
             </ul>
         </div>
