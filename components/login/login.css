@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.containers {
+    @apply w-full md:w-1/2;
+}
+
+.inputs {
+    @apply flex flex-col px-4 md:px-0;
+}
+
+.inputs label {
+    @apply ps-1.5 font-semibold;
+}
+
+.inputs input {
+    @apply ps-1.5 rounded-2xl py-1;
+}
