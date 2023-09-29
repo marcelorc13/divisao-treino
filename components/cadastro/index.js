@@ -2,6 +2,8 @@
 
 import './cadastro.css'
 
+import Link from 'next/link'
+
 import Image from 'next/image'
 import img from '@/public/imagem-cadastro-page.svg'
 
@@ -11,7 +13,7 @@ import { AuthContext } from '@/context/auth.js'
 
 export default function Cadastro() {
 
-    const Cadastro = useContext(AuthContext)
+    const {Login, Cadastro} = useContext(AuthContext)
 
     const [info, setInfo] = useState({
         nomeCompleto: '',
@@ -45,28 +47,29 @@ export default function Cadastro() {
                     <form onSubmit={HandleSubmit} className="containers flex flex-col justify-center gap-8">
                         <div className='inputs'>
                             <label htmlFor='nomeCompleto'>Nome Completo:</label>
-                            <input onChange={HandleChange} id='nomeCompleto' name='nomeCompleto' placeholder='Ex: Nona Bayat' type='text' />
+                            <input required onChange={HandleChange} id='nomeCompleto' name='nomeCompleto' placeholder='Ex: Nona Bayat' type='text' />
                         </div>
 
                         <div className='inputs'>
                             <label htmlFor='nomeUsuario'>Nome do Usuário:</label>
-                            <input onChange={HandleChange} id='nomeUsuario' name='nomeUsuario' placeholder='Ex: NonaPrega123' type='text' />
+                            <input required onChange={HandleChange} id='nomeUsuario' name='nomeUsuario' placeholder='Ex: NonaPrega123' type='text' />
                         </div>
 
                         <div className='inputs'>
                             <label htmlFor='email'>Email:</label>
-                            <input onChange={HandleChange} id='email' name='email' placeholder='nonabayat123@exemplo.com' type='email' />
+                            <input required onChange={HandleChange} id='email' name='email' placeholder='nonabayat123@exemplo.com' type='email' />
                         </div>
 
                         <div className='inputs'>
                             <label htmlFor='senha'>Senha:</label>
-                            <input onChange={HandleChange} id='senha' name='senha' placeholder='Senha com mais de 6 dígitos' type='password' />
+                            <input required onChange={HandleChange} id='senha' name='senha' placeholder='Senha com mais de 6 dígitos' type='password' />
                         </div>
 
                         <div className='flex items-center justify-center'>
                             <input id='btnSubmit' className='border border-gray-900 rounded-full py-1 px-4 cursor-pointer 
                             hover:bg-slate-900 hover:text-gray-100 transition duration-300' type='submit' value='Cadastrar-se' />
                         </div>
+                        <Link href='/login' className='underline self-center text-blue-950'>Já tenho uma conta</Link>
                     </form>
                 </div>
             </div>

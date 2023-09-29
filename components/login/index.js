@@ -2,13 +2,17 @@
 
 import './login.css'
 
-import { useContext, useEffect, useState } from 'react'
-import { AuthContext } from '@/context/auth'
+import Link from 'next/link'
 
 import Image from 'next/image'
 import img from '@/public/imagem-login-page.svg'
 
+import { useContext, useEffect, useState } from 'react'
+import { AuthContext } from '@/context/auth'
+
 export default function Login() {
+
+    const {Login, Cadastro} = useContext(AuthContext)
 
     const [user, setUser] = useState({
         email: '',
@@ -25,6 +29,7 @@ export default function Login() {
     function HandleSubmit(e) {
         e.preventDefault()
         console.log(user)
+        Login(user.email, user.senha)
     }
 
     return (
@@ -39,18 +44,19 @@ export default function Login() {
                     <form onSubmit={HandleSubmit} className="containers flex flex-col justify-center gap-8">
                         <div className='inputs'>
                             <label htmlFor='usuario'>Email:</label>
-                            <input onChange={HandleChange} name='email' placeholder='Email Cadastrado' type='email' />
+                            <input required onChange={HandleChange} id='email' name='email' placeholder='Email Cadastrado' type='email' />
                         </div>
 
                         <div className='inputs'>
                             <label htmlFor='senha'>Senha:</label>
-                            <input onChange={HandleChange} name='senha' placeholder='Senha' type='password' />
+                            <input required onChange={HandleChange} id='senha' name='senha' placeholder='Senha' type='password' />
                         </div>
 
                         <div className='flex items-center justify-center'>
                             <input className='border border-gray-900 rounded-full py-1 px-4 cursor-pointer 
                             hover:bg-slate-900 hover:text-gray-100 transition duration-300' type='submit' value='Entrar' />
                         </div>
+                        <Link href='/cadastro' className='underline self-center text-blue-950'>Criar conta</Link>
                     </form>
                 </div>
             </div>
