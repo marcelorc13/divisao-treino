@@ -41,10 +41,10 @@ export default function Login() {
                         <Image src={img} priority alt='imagem estatisticas' />
                     </div>
 
-                    <form onSubmit={HandleSubmit} className="containers flex flex-col justify-center gap-8">
+                    <form onSubmit={HandleSubmit} autoComplete='off' className="containers flex flex-col justify-center gap-8">
                         <div className='inputs'>
                             <label htmlFor='usuario'>Email:</label>
-                            <input required onChange={HandleChange} id='email' name='email' placeholder='Email Cadastrado' type='email' />
+                            <input required onChange={HandleChange} id='usuario' name='email' placeholder='Email Cadastrado' type='email' />
                         </div>
 
                         <div className='inputs'>

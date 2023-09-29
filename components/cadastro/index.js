@@ -31,8 +31,7 @@ export default function Cadastro() {
 
     function HandleSubmit(e) {
         e.preventDefault()
-        console.log(info)
-        Cadastro(info.email, info.senha)
+        Cadastro(info)
     }
 
     return (
