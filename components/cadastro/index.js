@@ -11,9 +11,9 @@ import { AuthContext } from '@/context/auth.js'
 
 export default function Cadastro() {
 
-    const { merda } = useContext(AuthContext)
+    const Cadastro = useContext(AuthContext)
 
-    const [cadastrado, setCadastrado] = useState({
+    const [info, setInfo] = useState({
         nomeCompleto: '',
         nomeUsuario: '',
         email: '',
@@ -22,15 +22,15 @@ export default function Cadastro() {
 
     function HandleChange(e){
         const {name, value} = e.target
-        setCadastrado((prev) => {
+        setInfo((prev) => {
             return {...prev, [name] : value}
         })
     }
 
     function HandleSubmit(e) {
         e.preventDefault()
-        console.log(cadastrado)
-        console.log(merda)
+        console.log(info)
+        Cadastro(info.email, info.senha)
     }
 
     return (
