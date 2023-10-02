@@ -12,7 +12,7 @@ import { AuthContext } from '@/context/auth'
 
 export default function Login() {
 
-    const {Login, Cadastro} = useContext(AuthContext)
+    const {Login, Cadastro, logado} = useContext(AuthContext)
 
     const [user, setUser] = useState({
         email: '',
@@ -28,7 +28,6 @@ export default function Login() {
 
     function HandleSubmit(e) {
         e.preventDefault()
-        console.log(user)
         Login(user.email, user.senha)
     }
 

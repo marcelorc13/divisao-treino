@@ -13,7 +13,7 @@ import { AuthContext } from '@/context/auth.js'
 
 export default function Cadastro() {
 
-    const {Login, Cadastro} = useContext(AuthContext)
+    const {Login, Cadastro, logado} = useContext(AuthContext)
 
     const [info, setInfo] = useState({
         nomeCompleto: '',

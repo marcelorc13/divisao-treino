@@ -1,6 +1,9 @@
 'use client'
 
 import { useState, useEffect, useContext, createContext } from 'react'
+
+import { useRouter } from 'next/navigation'
+
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '@/app/firebaseconnection'
 import { doc, setDoc } from 'firebase/firestore'
@@ -11,25 +14,40 @@ export const AuthContext = createContext({})
 export default function AuthProvider({ children }) {
 
     const auth = getAuth()
+    //https://console.firebase.google.com/u/0/project/projeto-equipe-roca/authentication/users?hl=pt-br
+
+
+    const router = useRouter()
+
+    const [logado, setLogado] = useState(false)
 
     const Login = async (email, senha) => {
         await signInWithEmailAndPassword(auth, email, senha)
             .then((userCredential) => {
-                console.log('Logado')
                 console.log(userCredential)
+                setLogado(true)
+                console.log(logado)
             })
             .catch((error) => {
                 console.log(error)
+                setLogado(false)
             })
+
+        if (logado == true){
+            router.push('/')
+        }
     }
 
     const Cadastro = async (info) => {
+        let cadastrado = false
+
         await createUserWithEmailAndPassword(auth, info.email, info.senha)
             .then((userCredential) => {
-                console.log('Cadastrado')
-                console.log(info)
-                console.log(userCredential.user.uid)
+                cadastrado = true
+                console.log(`Cadastrado = ${cadastrado}`)
+                console.log(userCredential)
 
+                //https://console.firebase.google.com/u/0/project/projeto-equipe-roca/firestore/data/~2Fusers~2F4GS0npNWsfZZq92DEfIBK12Yt8Q2?hl=pt-br
                 setDoc(doc(db, 'users', userCredential.user.uid), {
                     nomeCompleto: info.nomeCompleto,
                     nomeUsuario: info.nomeUsuario,
@@ -38,14 +56,20 @@ export default function AuthProvider({ children }) {
                 })
             })
             .catch((error) => {
+                cadastrado = false
+                console.log(`Cadastrado = ${cadastrado}`)
+
                 console.log(error)
             })
+
+        if (cadastrado == true) {
+            router.push('/login')
+        }
     }
 
 
-
     return (
-        <AuthContext.Provider value={{ Cadastro, Login }}>
+        <AuthContext.Provider value={{ Cadastro, Login, logado }}>
             {children}
         </AuthContext.Provider>
     )

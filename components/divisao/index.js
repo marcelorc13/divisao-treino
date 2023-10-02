@@ -3,7 +3,10 @@
 import './divisao.css'
 
 import Link from 'next/link'
-import { useEffect } from 'react'
+
+import { useEffect, useContext } from 'react'
+
+import { AuthContext } from '@/context/auth'
 
 import { CgGym } from 'react-icons/cg'
 import { IoIosBasketball } from 'react-icons/io'
@@ -15,7 +18,10 @@ import { userAgent } from 'next/server'
 
 export default function Divisao() {
 
+    const { Login, Cadastro, logado} = useContext(AuthContext)
+
     useEffect(() => {
+        console.log(logado)
         verDia()
     })
 
