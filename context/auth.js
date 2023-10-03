@@ -4,7 +4,7 @@ import { useState, useEffect, useContext, createContext } from 'react'
 
 import { useRouter } from 'next/navigation'
 
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth'
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth'
 import { auth } from '@/app/firebaseconnection'
 import { doc, setDoc } from 'firebase/firestore'
 import { db } from '@/app/firebaseconnection'
@@ -13,30 +13,37 @@ export const AuthContext = createContext({})
 
 export default function AuthProvider({ children }) {
 
+    const router = useRouter()
+
     const auth = getAuth()
     //https://console.firebase.google.com/u/0/project/projeto-equipe-roca/authentication/users?hl=pt-br
 
 
-    const router = useRouter()
 
     const [logado, setLogado] = useState(false)
+
+    const [usuario, setUsuario] = useState({})
 
     const Login = async (email, senha) => {
         await signInWithEmailAndPassword(auth, email, senha)
             .then((userCredential) => {
-                console.log(userCredential)
+                setUsuario(userCredential.user.email)
+                console.log(usuario)
                 setLogado(true)
-                console.log(logado)
+
+                localStorage.setItem('EstaLogado', logado)
+                localStorage.setItem('UsuarioLogado', JSON.stringify(usuario)) 
             })
             .catch((error) => {
                 console.log(error)
-                setLogado(false)
             })
 
-        if (logado == true){
+        if (logado == true) {
             router.push('/')
         }
+
     }
+
 
     const Cadastro = async (info) => {
         let cadastrado = false
@@ -69,7 +76,7 @@ export default function AuthProvider({ children }) {
 
 
     return (
-        <AuthContext.Provider value={{ Cadastro, Login, logado }}>
+        <AuthContext.Provider value={{ Cadastro, Login, usuario }}>
             {children}
         </AuthContext.Provider>
     )

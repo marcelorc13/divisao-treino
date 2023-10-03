@@ -3,6 +3,7 @@
 import './divisao.css'
 
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 import { useEffect, useContext } from 'react'
 
@@ -18,10 +19,21 @@ import { userAgent } from 'next/server'
 
 export default function Divisao() {
 
-    const { Login, Cadastro, logado} = useContext(AuthContext)
+    const { Login, Cadastro, usuario } = useContext(AuthContext)
+
+    const router = useRouter()
+
+    const EstaLogado = localStorage.getItem('EstaLogado') 
 
     useEffect(() => {
-        console.log(logado)
+        if(EstaLogado === 'true') {
+            console.log('Eu estou logado')
+            console.log(`Email do usuário: ${usuario}`)
+        }
+        else{
+            console.log('Não estou logado')
+            router.push('/login')
+        }
         verDia()
     })
 
