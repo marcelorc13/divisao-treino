@@ -31,8 +31,11 @@ export default function AuthProvider({ children }) {
                 console.log(usuario)
                 setLogado(true)
 
-                localStorage.setItem('EstaLogado', logado)
-                localStorage.setItem('UsuarioLogado', JSON.stringify(usuario)) 
+                if (typeof window !== 'undefined') {
+                    localStorage.setItem('EstaLogado', logado)
+                    localStorage.setItem('UsuarioLogado', JSON.stringify(usuario))
+                }
+
             })
             .catch((error) => {
                 console.log(error)

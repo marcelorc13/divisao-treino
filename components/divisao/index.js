@@ -22,20 +22,28 @@ export default function Divisao() {
     const { Login, Cadastro, usuario } = useContext(AuthContext)
 
     const router = useRouter()
-
-    const EstaLogado = localStorage.getItem('EstaLogado') 
-
     useEffect(() => {
-        if(EstaLogado === 'true') {
-            console.log('Eu estou logado')
-            console.log(`Email do usuário: ${usuario}`)
+
+        if (typeof window !== 'undefined') {
+            const EstaLogado = localStorage.getItem('EstaLogado')
+
+
+            if (EstaLogado === 'true') {
+                console.log('Eu estou logado')
+                console.log(`Email do usuário: ${usuario}`)
+            }
+            else {
+                console.log('Não estou logado')
+                router.push('/login')
+            }
         }
-        else{
-            console.log('Não estou logado')
-            router.push('/login')
-        }
+
         verDia()
-    })
+    }, [router, usuario])
+
+
+
+
 
     function verDia() {
         const dataHoje = new Date()

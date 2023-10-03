@@ -1,6 +1,6 @@
 'use client'
 import { useSearchParams } from 'next/navigation'
-import { useEffect } from 'react'
+import { useCallback, useEffect } from 'react'
 import { useState } from 'react'
 
 import Descanso from '../treinos/descanso'
@@ -15,7 +15,7 @@ export default function TreinoBody() {
 
     useEffect(() => {
         MostrarTreino();
-    }, [])
+    })
 
     function MostrarTreino() {
         if (musculos == 'Descanso') {
