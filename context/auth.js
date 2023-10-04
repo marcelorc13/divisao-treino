@@ -22,7 +22,7 @@ export default function AuthProvider({ children }) {
 
     const [logado, setLogado] = useState(false)
 
-    const [usuario, setUsuario] = useState({})
+    const [usuario, setUsuario] = useState()
 
     const Login = async (email, senha) => {
         await signInWithEmailAndPassword(auth, email, senha)

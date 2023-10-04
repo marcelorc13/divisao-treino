@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 #lista-exercicios {
-    @apply mt-8;
+    @apply mt-8 w-full;
 }
 
 #lista-exercicios ul {

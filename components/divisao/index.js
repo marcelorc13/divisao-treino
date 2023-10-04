@@ -26,11 +26,12 @@ export default function Divisao() {
 
         if (typeof window !== 'undefined') {
             const EstaLogado = localStorage.getItem('EstaLogado')
+            const Usuario = localStorage.getItem('UsuarioLogado')
 
 
             if (EstaLogado === 'true') {
-                console.log('Eu estou logado')
-                console.log(`Email do usuário: ${usuario}`)
+                //console.log('Eu estou logado')
+                //console.log(`Email do usuário: ${JSON.parse(Usuario)}`)
             }
             else {
                 console.log('Não estou logado')
@@ -39,7 +40,7 @@ export default function Divisao() {
         }
 
         verDia()
-    }, [router, usuario])
+    }, [router])
 
 
 
@@ -63,15 +64,12 @@ export default function Divisao() {
             </div>
 
             <ul id='dias' className='flex flex-col gap-6'>
+
                 <li className='dias'>
                     <Link href={{
-                        pathname: '/treino',
-                        query: {
-                            dia: 'Domingo',
-                            musculos: 'Descanso',
-                        }
+                        pathname: '/domingo',
                     }}>
-                        Domingo : Descanso
+                        Domingo: Descanso
                     </Link>
                 </li>
 
@@ -80,7 +78,7 @@ export default function Divisao() {
                         pathname: '/treino',
                         query: {
                             dia: 'Segunda-Feira',
-                            musculos: 'Perna Completa',
+                            id: 'segunda'
                         }
                     }}>
                         Segunda-Feira : Perna Completa
@@ -92,10 +90,10 @@ export default function Divisao() {
                         pathname: '/treino',
                         query: {
                             dia: 'Terça-Feira',
-                            musculos: 'Peito & Bíceps (Panturrilha)',
+                            id: 'terca'
                         }
                     }}>
-                        Terça-Feira : Peito & Bíceps (Panturrilha)
+                        Terça-Feira : Peito & Bíceps
                     </Link>
                 </li>
                 <li className='dias'>
@@ -103,7 +101,7 @@ export default function Divisao() {
                         pathname: '/treino',
                         query: {
                             dia: 'Quarta-Feira',
-                            musculos: 'Costas & Ombro',
+                            id: 'quarta'
                         }
                     }}>
                         Quarta-Feira : Costas & Ombro
@@ -114,7 +112,7 @@ export default function Divisao() {
                         pathname: '/treino',
                         query: {
                             dia: 'Quinta-Feira',
-                            musculos: 'Descanso (Panturrilha)',
+                            id: 'quinta'
                         }
                     }}>
                         Quinta-Feira : Descanso (Panturrilha)
@@ -125,7 +123,7 @@ export default function Divisao() {
                         pathname: '/treino',
                         query: {
                             dia: 'Sexta-Feira',
-                            musculos: 'Bíceps & Tríceps',
+                            id: 'sexta'
                         }
                     }}>
                         Sexta-Feira : Bíceps & Tríceps
@@ -136,10 +134,10 @@ export default function Divisao() {
                         pathname: '/treino',
                         query: {
                             dia: 'Sábado',
-                            musculos: 'Peito & Ombro (Panturrilha)',
+                            id: 'sabado'
                         }
                     }}>
-                        Sábado : Peito & Ombro (Panturrilha)
+                        Sábado : Ombro & Peito (Panturrilha)
                     </Link>
                 </li>
             </ul>
