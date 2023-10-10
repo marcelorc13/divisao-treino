@@ -4,6 +4,7 @@ import './header.css'
 
 import { BiLogOut } from 'react-icons/bi'
 import { GiHamburgerMenu } from 'react-icons/gi'
+import { BiLoaderCircle } from 'react-icons/bi'
 
 import { useContext } from 'react'
 import { AuthContext } from '@/context/auth'
@@ -36,23 +37,23 @@ export default function Header() {
     }
 
     return (
-        <nav className="pt-8 md:px-20 md:py-8">
+        <nav className="pt-8 md:px-20 md:py-12">
             <div className='flex text-center justify-center md:hidden'>
                 <button id='btnAbrir' className='text-2xl' value='abrir' onClick={abrirMenu}><GiHamburgerMenu /></button>
             </div>
-            <div id='navItems' className='hidden md:flex md:flex-row items-center justify-between md:text-lg lg:text-xl font-semibold'>
-                <div className='text-center'>
+            <div id='navItems' className='hidden md:flex md:flex-row justify-between items-center md:text-lg lg:text-xl font-semibold'>
+                <div className='text-center py-2 md:py-0'>
                     <h1 className='md:text-2xl lg:text-4xl font-bold'>Equipe Roca</h1>
                 </div>
 
                 <div>
-                    <ul id='navLista' className="flex flex-col md:flex-row justify-center items-center gap-0 md:gap-4">
-                        <li>Treino de Hoje</li>
-                        <li>Guardar Treino</li>
+                    <ul id='navLista' className="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-4">
+                        <li>Guardar Treino<BiLoaderCircle /></li>
+                        <li>Perfil<BiLoaderCircle /></li>
                     </ul>
                 </div>
 
-                <div className='flex flex-row items-center justify-center'>
+                <div id='logoutDiv' className='flex flex-row items-center justify-center'>
                     <label htmlFor='btnLogout' className='flex flex-row items-center justify-center cursor-pointer md:hidden'>Logout:</label>
                     <button id='btnLogout' onClick={Logout}><BiLogOut /></button>
                 </div>

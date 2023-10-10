@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+#navLista li {
+    @apply flex flex-row items-center rounded-full bg-white px-2 py-0.5 drop-shadow-lg relative cursor-pointer
+}
+
+#navLista li:hover {
+    @apply scale-105 transition duration-300
+}
+
+#navLista li::after {
+    @apply content-['Aguarde...'] text-gray-900 absolute -right-20 md:right-auto md:-top-8 opacity-0 duration-300
+} 
+
+#navLista li::after:hover {
+    @apply opacity-80
+}
