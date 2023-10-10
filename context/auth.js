@@ -82,7 +82,7 @@ export default function AuthProvider({ children }) {
         console.log(logado)
         if (typeof window !== 'undefined') {
             localStorage.setItem('EstaLogado', logado)
-            setUsuario('')
+            setUsuario()
             localStorage.setItem('UsuarioLogado', JSON.stringify(usuario))
         }
         ChecarLogin()

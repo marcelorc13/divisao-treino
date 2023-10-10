@@ -3,9 +3,9 @@ import Header from "@/components/header";
 
 export default function Home() {
   return (
-    <body>
+    <main>
       <Header />
       <Divisao />
-    </body>
+    </main>
   )
 }
