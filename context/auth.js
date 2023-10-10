@@ -23,17 +23,21 @@ export default function AuthProvider({ children }) {
     const [logado, setLogado] = useState(false)
 
     const [usuario, setUsuario] = useState()
+    const [uidUser, setUidUser] = useState()
 
     const Login = async (email, senha) => {
         await signInWithEmailAndPassword(auth, email, senha)
             .then((userCredential) => {
                 setUsuario(userCredential.user.email)
+                setUidUser(userCredential.user.uid)
                 console.log(usuario)
+                console.log(uidUser)
                 setLogado(true)
 
                 if (typeof window !== 'undefined') {
                     localStorage.setItem('EstaLogado', logado)
                     localStorage.setItem('UsuarioLogado', JSON.stringify(usuario))
+                    localStorage.setItem('UidLogado', JSON.stringify(uidUser))
                 }
 
             })

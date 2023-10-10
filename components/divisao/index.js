@@ -25,10 +25,7 @@ export default function Divisao() {
     useEffect(() => {
         ChecarLogin()
         verDia()
-    }, [router])
-
-
-
+    }, [ChecarLogin])
 
 
     function verDia() {
