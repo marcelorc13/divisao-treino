@@ -19,26 +19,11 @@ import { userAgent } from 'next/server'
 
 export default function Divisao() {
 
-    const { Login, Cadastro, usuario } = useContext(AuthContext)
+    const { Cadastro, Login, usuario, Logout, ChecarLogin } = useContext(AuthContext)
 
     const router = useRouter()
     useEffect(() => {
-
-        if (typeof window !== 'undefined') {
-            const EstaLogado = localStorage.getItem('EstaLogado')
-            const Usuario = localStorage.getItem('UsuarioLogado')
-
-
-            if (EstaLogado === 'true') {
-                //console.log('Eu estou logado')
-                //console.log(`Email do usuário: ${JSON.parse(Usuario)}`)
-            }
-            else {
-                console.log('Não estou logado')
-                router.push('/login')
-            }
-        }
-
+        ChecarLogin()
         verDia()
     }, [router])
 

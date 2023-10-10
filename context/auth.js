@@ -77,9 +77,38 @@ export default function AuthProvider({ children }) {
         }
     }
 
+    const Logout = () => {
+        setLogado(false)
+        console.log(logado)
+        if (typeof window !== 'undefined') {
+            localStorage.setItem('EstaLogado', logado)
+            setUsuario('')
+            localStorage.setItem('UsuarioLogado', JSON.stringify(usuario))
+        }
+        ChecarLogin()
+    }
+
+
+    const ChecarLogin = () => {
+        if (typeof window !== 'undefined') {
+            const EstaLogado = localStorage.getItem('EstaLogado')
+            const Usuario = localStorage.getItem('UsuarioLogado')
+
+
+            if (EstaLogado === 'true') {
+                //console.log('Eu estou logado')
+                //console.log(`Email do usuário: ${JSON.parse(Usuario)}`)
+            }
+            else {
+                console.log('Não estou logado')
+                router.push('/login')
+            }
+        }
+    }
+
 
     return (
-        <AuthContext.Provider value={{ Cadastro, Login, usuario }}>
+        <AuthContext.Provider value={{ Cadastro, Login, usuario, Logout, ChecarLogin }}>
             {children}
         </AuthContext.Provider>
     )
