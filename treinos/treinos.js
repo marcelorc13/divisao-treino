@@ -73,14 +73,14 @@ const Treinos = {
                 },
                 exercicio4: {
                     exercicio: 'Puxada Triângulo',
-                    series: 2
+                    series: 1
                 },
                 exercicio5: {
                     exercicio: 'Elevação Lateral com Halteres',
-                    series: 3
+                    series: 2
                 },
                 exercicio6: {
-                    exercicio: 'Crucifixo Invertido Unilateral na Polia',
+                    exercicio: 'Crucifixo Invertido no Voador',
                     series: 1
                 },
             }
@@ -130,8 +130,8 @@ const Treinos = {
             treino: 'Ombro & Peito (Panturrilha)',
             exercicios: {
                 exercicio1: {
-                    exercicio: 'Crucifixo Invertido na Polia Unilateral',
-                    series: 2
+                    exercicio: 'Crucifixo Invertido no Voador',
+                    series: 1
                 },
                 exercicio2: {
                     exercicio: 'Desenvolvimento com Halteres',
@@ -139,7 +139,7 @@ const Treinos = {
                 },
                 exercicio3: {
                     exercicio: 'Elevação Lateral na Polia',
-                    series: 3
+                    series: 2
                 },
                 exercicio4: {
                     exercicio: 'Crucifxo Inclinado com Halteres',

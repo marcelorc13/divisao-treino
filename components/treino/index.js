@@ -24,7 +24,7 @@ export default function TreinoBody() {
     const exercicios = Treinos.treinos[id].exercicios
     const exerciciosKey = Object.keys(exercicios)
 
-    function MostrarTreino() {
+    const MostrarTreino = () => {
         console.log(exercicios)
         console.log(exerciciosKey)
     }
@@ -37,10 +37,18 @@ export default function TreinoBody() {
             <div id='lista-exercicios'>
                 <ul className='w-full'>
                     {exerciciosKey.map((key) => {
+                        let serie = ''
+                        if(exercicios[key].series == 1) {
+                            serie = 'Série'
+                        }
+                        else {
+                            serie = 'Séries'
+                        }
+
                         return (
                             <li key={key}>
                                 {exercicios[key].exercicio}
-                                <p>{exercicios[key].series} Séries</p>
+                                <p>{`${exercicios[key].series} ${serie}`}</p>
                             </li>
                         )
                     })}

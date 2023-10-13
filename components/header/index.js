@@ -6,6 +6,8 @@ import { BiLogOut } from 'react-icons/bi'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { BiLoaderCircle } from 'react-icons/bi'
 
+import Link from 'next/link'
+
 import { useContext } from 'react'
 import { AuthContext } from '@/context/auth'
 
@@ -48,8 +50,8 @@ export default function Header() {
 
                 <div>
                     <ul id='navLista' className="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-4">
+                        <Link href='/perfil'><li>Perfil<BiLoaderCircle /></li></Link>
                         <li>Guardar Treino<BiLoaderCircle /></li>
-                        <li>Perfil<BiLoaderCircle /></li>
                     </ul>
                 </div>
 
