@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 #infosPerfil h1 {
-    @apply text-xl font-bold
+    @apply text-xl md:text-3xl font-bold
 }
 #infosPerfil h2 {
-    @apply text-lg font-semibold
+    @apply text-lg md:text-2xl font-semibold
 }
 #infosPerfil h3 {
-    @apply text-base
+    @apply text-base md:text-lg
 }
 
 .cardTreinos {

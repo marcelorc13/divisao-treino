@@ -8,10 +8,10 @@ import { BiLoaderCircle } from 'react-icons/bi'
 
 import Link from 'next/link'
 
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { AuthContext } from '@/context/auth'
 
-export default function Header() {
+export default function Header(props) {
 
     const { Cadastro, Login, usuario, Logout } = useContext(AuthContext)
 
@@ -38,6 +38,27 @@ export default function Header() {
         }
     }
 
+    useEffect(() => {
+        const btnDivisao = document.querySelector('#btnDivisao')
+        const btnPerfil = document.querySelector('#btnPerfil')
+        const btnGuardar = document.querySelector('#btnGuardar')
+
+        if (props.tela === 'divisao') {
+            btnDivisao.classList.add('border-2')
+            btnDivisao.classList.add('border-gray-900')
+        }
+        else if (props.tela === 'perfil') {
+            btnPerfil.classList.add('border-2')
+            btnPerfil.classList.add('border-gray-900')
+        }
+        else if (props.tela === 'perfil') {
+            btnGuardar.classList.add('border-2')
+            btnGuardar.classList.add('border-gray-900')
+        }
+
+    }, [])
+
+
     return (
         <nav className="mt-8 md:px-20 md:py-12">
             <div className='flex text-center justify-center md:hidden'>
@@ -51,9 +72,9 @@ export default function Header() {
 
                 <div>
                     <ul id='navLista' className="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-4 py-4 md:py-0">
-                        <Link href='/'><li>Divisão</li></Link>
-                        <Link href='/perfil'><li className='desenvolvendo'>Perfil<BiLoaderCircle /></li></Link>
-                        <li className='desenvolvendo'>Guardar Treino<BiLoaderCircle /></li>
+                        <Link href='/'><li id='btnDivisao'>Divisão</li></Link>
+                        <Link href='/perfil'><li id='btnPerfil'>Perfil</li></Link>
+                        <li id='btnGuardar' className='desenvolvendo'>Guardar Treino<BiLoaderCircle /></li>
                     </ul>
                 </div>
 

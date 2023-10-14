@@ -8,7 +8,7 @@ export const metadata = {
 export default function PerfilPage() {
     return (
         <>
-            <Header />
+            <Header tela='perfil' />
             <Perfil />
         </>
     )

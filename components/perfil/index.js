@@ -30,8 +30,8 @@ export default function Perfil() {
     return (
         <main className='w-full flex flex-col gap-12 pt-12'>
             <div id='infosPerfil' className="flex flex-col items-center justify-center">
-                <h1>{infos.nomeUsuario}</h1>
-                <h2>{infos.nomeCompleto}</h2>
+                <h1>{infos.nomeCompleto}</h1>
+                <h2>{infos.nomeUsuario}</h2>
                 <h3>{infos.email}</h3>
             </div>
             <div className='flex flex-col justify-center'>
