@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#infosPerfil h1 {
+    @apply text-xl font-bold
+}
+#infosPerfil h2 {
+    @apply text-lg font-semibold
+}
+#infosPerfil h3 {
+    @apply text-base
+}
+
+.cardTreinos {
+    @apply border border-gray-900 rounded-xl py-2 px-4 flex flex-col
+}
+
+.cardTreinos h1 {
+    @apply self-center
+}

@@ -33,8 +33,7 @@ export default function Divisao() {
         const diaHoje = dataHoje.getDay()
 
         const dias = document.querySelectorAll('.dias')
-
-        dias[diaHoje].classList.remove('dias')
+        
         dias[diaHoje].classList.add('destacado')
     }
 

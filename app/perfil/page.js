@@ -1,3 +1,4 @@
+import Header from "@/components/header"
 import Perfil from "@/components/perfil"
 
 export const metadata = {
@@ -6,6 +7,9 @@ export const metadata = {
 
 export default function PerfilPage() {
     return (
-        <Perfil />
+        <>
+            <Header />
+            <Perfil />
+        </>
     )
 }
