@@ -36,22 +36,22 @@ export default function Perfil() {
             </div>
             <div className='flex flex-col justify-center'>
                 <h1 className='self-center text-xl font-semibold mb-2'>Meus Treinos:</h1>
-                <div className='grid gap-4 grid-cols-1 px-8'>
-                    {/* <div className='cardTreinos'>
-                        <h1>Data 01/01/23</h1>
+                <div className='grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 px-8'>
+                    <div className='cardTreinos'>
+                        <h1>Em breve...</h1>
                     </div>
 
                     <div className='cardTreinos'>
-                        <h1>Data 02/01/23</h1>
+                        <h1>Em breve...</h1>
                     </div>
 
                     <div className='cardTreinos'>
-                        <h1>Data 03/01/23</h1>
+                        <h1>Em breve...</h1>
                     </div>
 
                     <div className='cardTreinos'>
-                        <h1>Data 04/01/23</h1>
-                    </div> */}
+                        <h1>Em breve...</h1>
+                    </div>
                 </div>
             </div>
         </main>

@@ -10,10 +10,14 @@
     @apply scale-105 transition duration-300
 }
 
-#navLista li::after {
+.desenvolvendo::after {
     @apply content-['Aguarde...'] text-gray-900 absolute -right-20 md:right-auto md:-top-8 opacity-0 duration-300
 } 
 
-#navLista li::after:hover {
+.desenvolvendo::after:hover {
     @apply opacity-80
+}
+
+#navItems {
+    @apply border border-gray-900 mx-24 rounded-3xl md:border-0 py-2
 }

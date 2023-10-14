@@ -22,7 +22,7 @@ export default function Header() {
 
         if (btn.value == 'abrir') {
             items.classList.remove('hidden')
-            items.classList.add('pt-6')
+            items.classList.add('mt-6')
 
             btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>`
 
@@ -30,7 +30,7 @@ export default function Header() {
         }
         else if (btn.value == 'fechar') {
             items.classList.add('hidden')
-            items.classList.remove('pt-6')
+            items.classList.remove('mt-6')
 
             btn.innerHTML = `<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M32 96v64h448V96H32zm0 128v64h448v-64H32zm0 128v64h448v-64H32z"></path></svg>`
 
@@ -39,19 +39,21 @@ export default function Header() {
     }
 
     return (
-        <nav className="pt-8 md:px-20 md:py-12">
+        <nav className="mt-8 md:px-20 md:py-12">
             <div className='flex text-center justify-center md:hidden'>
                 <button id='btnAbrir' className='text-2xl' value='abrir' onClick={abrirMenu}><GiHamburgerMenu /></button>
             </div>
+
             <div id='navItems' className='hidden md:flex md:flex-row justify-between items-center md:text-lg lg:text-xl font-semibold'>
-                <div className='text-center py-2 md:py-0'>
-                    <h1 className='md:text-2xl lg:text-4xl font-bold'>Equipe Roca</h1>
+                <div className='text-center md:py-0'>
+                    <h1 className='text-xl md:text-2xl lg:text-4xl font-bold'>Equipe Roca</h1>
                 </div>
 
                 <div>
-                    <ul id='navLista' className="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-4">
-                        <Link href='/perfil'><li>Perfil<BiLoaderCircle /></li></Link>
-                        <li>Guardar Treino<BiLoaderCircle /></li>
+                    <ul id='navLista' className="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-4 py-4 md:py-0">
+                        <Link href='/'><li>Divisão</li></Link>
+                        <Link href='/perfil'><li className='desenvolvendo'>Perfil<BiLoaderCircle /></li></Link>
+                        <li className='desenvolvendo'>Guardar Treino<BiLoaderCircle /></li>
                     </ul>
                 </div>
 
