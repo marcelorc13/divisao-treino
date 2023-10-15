@@ -12,8 +12,6 @@ export default function Evolucao() {
     const [uid, setUid] = useState()
     const [datas, setDatas] = useState({})
 
-    const inputs = document.querySelectorAll('.inputsValores')
-
     const HandleChange = (e) => {
         const { name, value } = e.target
         setDatas((prev) => {
@@ -29,10 +27,6 @@ export default function Evolucao() {
             .then(() => {
                 console.log('Peso Enviado')
                 alert('Peso Enviado com Sucesso')
-               Array.from(inputs).map((input) => {
-                    input.value = ''
-                    return null
-                })
             })
             .catch((error) => {
                 console.log('Erro no envio')
