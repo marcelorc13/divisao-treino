@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.divInputs {
+    @apply w-full flex flex-col px-20 md:px-48 lg:px-64
+}
+
+.divInputs:active {
+    @apply border-gray-900
+}
+
+.divInputs label {
+    @apply ps-2 font-semibold
+}
+
+.btn {
+    @apply items-center mt-1
+}
+
+.inputsValores {
+    @apply rounded-xl px-2 text-lg py-1
+}
+
+.peso {
+    @apply text-xl text-center
+}

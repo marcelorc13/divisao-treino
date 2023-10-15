@@ -75,6 +75,7 @@ export default function Header(props) {
                         <Link href='/'><li id='btnDivisao'>Divisão</li></Link>
                         <Link href='/perfil'><li id='btnPerfil'>Perfil</li></Link>
                         <Link href='/guardar-treino'><li id='btnGuardar' className='desenvolvendo'>Guardar Treino<BiLoaderCircle /></li></Link>
+                        <Link href='evolucao'><li id='btnEvolucao' className='desenvolvendo'>Evolução<BiLoaderCircle /></li></Link>
                     </ul>
                 </div>
 

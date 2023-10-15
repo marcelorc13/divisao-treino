@@ -10,9 +10,7 @@ export default function GuardarTreino() {
 
     const [uid, setUid] = useState()
 
-    const [treino, setTreino] = useState({
-        TreinoTitulo: '',
-    })
+    const [treino, setTreino] = useState({})
     const [data, setData] = useState()
 
     const HandleTexto = (e) => {
