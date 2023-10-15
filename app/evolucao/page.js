@@ -8,7 +8,7 @@ export const metadata = {
 export default function EvolucaoPage() {
     return (
         <>
-            <Header />
+            <Header tela='evolucao' />
             <Evolucao />
         </>
     )

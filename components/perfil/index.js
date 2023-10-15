@@ -3,28 +3,42 @@
 import './perfil.css'
 
 import { useEffect, useState } from "react"
-import { doc, getDoc } from "firebase/firestore"
+import { collection, getDoc, getDocs, doc, query } from "firebase/firestore"
 import { db } from "@/app/firebaseconnection"
 
 export default function Perfil() {
-    const [uid, setUid] = useState('')
+    const [uid, setUid] = useState()
 
     const [infos, setInfos] = useState({})
 
+    const [pesos, setPesos] = useState([])
+
     useEffect(() => {
-        setUid(JSON.parse(localStorage.getItem('UidLogado')))
+        const userId = JSON.parse(localStorage.getItem('UidLogado'))
+        setUid(userId)
 
-        const ReceberDados = async () => {
-            const docRef = doc(db, 'users', JSON.parse(localStorage.getItem('UidLogado')))
-            const docSnap = await getDoc(docRef)
+        const ReceberDados = async () => { 
+            const docSnapDados = await getDoc(doc(db, 'users', userId))
 
-            const infosUser = docSnap.data()
+            const infosUser = docSnapDados.data()
             setInfos(infosUser)
         }
 
+        const ReceberEvolucao = async () => {
+            const q = query(collection(db, 'users', userId, 'pesos'))
+            const querySnapshot = await getDocs(q)
+
+            querySnapshot.forEach((doc) => {
+                setPesos(doc.data())
+            })
+        }
+
         ReceberDados()
+        ReceberEvolucao() 
+        console.log(pesos)
     }, [])
 
+    console.log(pesos)
     //console.log(infos)
 
     return (
@@ -49,6 +63,14 @@ export default function Perfil() {
                         <h1>Em breve...</h1>
                     </div>
 
+                    <div className='cardTreinos'>
+                        <h1>Em breve...</h1>
+                    </div>
+                </div>
+            </div>
+            <div className='flex flex-col justify-center'>
+                <h1 className='self-center text-xl font-semibold mb-2'>Minha Evolução:</h1>
+                <div className='grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 px-8'>
                     <div className='cardTreinos'>
                         <h1>Em breve...</h1>
                     </div>

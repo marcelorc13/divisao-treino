@@ -42,6 +42,7 @@ export default function Header(props) {
         const btnDivisao = document.querySelector('#btnDivisao')
         const btnPerfil = document.querySelector('#btnPerfil')
         const btnGuardar = document.querySelector('#btnGuardar')
+        const btnEvolucao = document.querySelector('#btnEvolucao')
 
         if (props.tela === 'divisao') {
             btnDivisao.classList.add('border-2')
@@ -54,6 +55,10 @@ export default function Header(props) {
         else if (props.tela === 'guardarTreino') {
             btnGuardar.classList.add('border-2')
             btnGuardar.classList.add('border-gray-900')
+        }
+        else if (props.tela === 'evolucao') {
+            btnEvolucao.classList.add('border-2')
+            btnEvolucao.classList.add('border-gray-900')
         }
 
     }, [])
@@ -75,7 +80,7 @@ export default function Header(props) {
                         <Link href='/'><li id='btnDivisao'>Divisão</li></Link>
                         <Link href='/perfil'><li id='btnPerfil'>Perfil</li></Link>
                         <Link href='/guardar-treino'><li id='btnGuardar' className='desenvolvendo'>Guardar Treino<BiLoaderCircle /></li></Link>
-                        <Link href='evolucao'><li id='btnEvolucao' className='desenvolvendo'>Evolução<BiLoaderCircle /></li></Link>
+                        <Link href='evolucao'><li id='btnEvolucao'>Evolução</li></Link>
                     </ul>
                 </div>
 
