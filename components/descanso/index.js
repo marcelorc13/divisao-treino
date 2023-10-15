@@ -24,7 +24,7 @@ export default function Descanso() {
             <h1 className="text-4xl md:text-5xl text-center">Caio vai descansar hoje?</h1>
             <div className="flex gap-4">
                 <button className="border bg-gray-900 rounded-full text-white text-xl font-bold px-6 py-1" onClick={HandleFelicidade}>Sim</button>
-                <button className="border bg-gray-900 rounded-full text-white text-xl font-bold px-6 py-1" id="btnNao" onClick={HandleTristeza}>Não</button>
+                <button className="border bg-gray-900 rounded-full text-white text-xl font-bold px-6 py-1" id="btnNao" onMouseOver={HandleTristeza}>Não</button>
             </div>
 
         </div>

@@ -10,15 +10,14 @@ export default function GuardarTreino() {
 
     const [uid, setUid] = useState()
 
-    const [treinos, setTreinos] = useState({
-        texto01: '',
-        texto02: '',
+    const [treino, setTreino] = useState({
+        TreinoTitulo: '',
     })
     const [data, setData] = useState()
 
     const HandleTexto = (e) => {
         const { name, value } = e.target
-        setTreinos((prev) => {
+        setTreino((prev) => {
             return { ...prev, [name]: value }
         })
     }
@@ -30,11 +29,11 @@ export default function GuardarTreino() {
         e.preventDefault()
 
         console.log(data)
-        console.log(treinos)
+        console.log(treino)
 
 
         setDoc(doc(db, 'users', uid, 'treinos', data), {
-            treino: treinos,
+            treino: treino,
         })
             .then(() => {
                 console.log('Treino Enviado')
@@ -45,16 +44,23 @@ export default function GuardarTreino() {
             })
     }
 
-
     useEffect(() => {
         setUid(JSON.parse(localStorage.getItem('UidLogado')))
     }, [])
 
     return (
-        <main>
+        <main className='mt-4'>
             <form onSubmit={EnviarTreino} className='flex flex-col gap-2 items-center justify-center'>
-                <input onChange={HandleData} type='date' />
-                {/* <input onChange={HandleTexto} name='texto01' type='text' /> */}
+                <input required onChange={HandleData} type='date' />
+                <select required onChange={HandleTexto} name='TreinoTitulo'>
+                    <option hidden>Selecione o Treino</option>
+                    <option value='Perna Completa'>Perna Completa</option>
+                    <option value='Peito & Bíceps (Panturrilha)'>Peito & Bíceps (Panturrilha)</option>
+                    <option value='Costas & Ombro'>Costas & Ombro</option>
+                    <option value='Descanso (Panturrilha)'>Descanso (Panturrilha)</option>
+                    <option value='Bíceps & Tríceps'>Bíceps & Tríceps</option>
+                    <option value='Ombro & Peito (Panturrilha)'>Ombro & Peito (Panturrilha)</option>
+                </select>
                 <input type='submit' value='Enviar' />
             </form>
         </main>

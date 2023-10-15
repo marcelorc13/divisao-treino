@@ -6,7 +6,10 @@ import { useSearchParams } from 'next/navigation'
 import { useCallback, useEffect } from 'react'
 import { useState } from 'react'
 
+import { BiArrowBack } from 'react-icons/bi'
+
 import Treinos from '@/treinos/treinos'
+import Link from 'next/link'
 
 export default function TreinoBody() {
 
@@ -31,14 +34,17 @@ export default function TreinoBody() {
 
 
     return (
-        <main className='flex flex-col items-center'>
+        <main className='flex flex-col items-center relative'>
+            <div className='text-2xl md:text-3xl absolute left-4 top-4 md:left-12 lg:left-24' >
+                <Link href='/'><BiArrowBack className='hover:-translate-x-2 transition duration-300' /></Link>
+            </div>
             <h1 className='text-xl md:text-2xl text-center font-semibold'>{dia}</h1>
             <h1 className='text-3xl md:text-4xl text-center font-bold'>{JSON.parse(treino)}</h1>
             <div id='lista-exercicios'>
                 <ul className='w-full'>
                     {exerciciosKey.map((key) => {
                         let serie = ''
-                        if(exercicios[key].series == 1) {
+                        if (exercicios[key].series == 1) {
                             serie = 'Série'
                         }
                         else {

@@ -51,7 +51,7 @@ export default function Header(props) {
             btnPerfil.classList.add('border-2')
             btnPerfil.classList.add('border-gray-900')
         }
-        else if (props.tela === 'perfil') {
+        else if (props.tela === 'guardarTreino') {
             btnGuardar.classList.add('border-2')
             btnGuardar.classList.add('border-gray-900')
         }
@@ -60,7 +60,7 @@ export default function Header(props) {
 
 
     return (
-        <nav className="mt-8 md:px-20 md:py-12">
+        <nav className="mt-8 md:px-20 md:py-8">
             <div className='flex text-center justify-center md:hidden'>
                 <button id='btnAbrir' className='text-2xl' value='abrir' onClick={abrirMenu}><GiHamburgerMenu /></button>
             </div>
@@ -74,7 +74,7 @@ export default function Header(props) {
                     <ul id='navLista' className="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-4 py-4 md:py-0">
                         <Link href='/'><li id='btnDivisao'>Divisão</li></Link>
                         <Link href='/perfil'><li id='btnPerfil'>Perfil</li></Link>
-                        <li id='btnGuardar' className='desenvolvendo'>Guardar Treino<BiLoaderCircle /></li>
+                        <Link href='/guardar-treino'><li id='btnGuardar' className='desenvolvendo'>Guardar Treino<BiLoaderCircle /></li></Link>
                     </ul>
                 </div>
 
