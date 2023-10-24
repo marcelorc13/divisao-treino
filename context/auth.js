@@ -28,26 +28,21 @@ export default function AuthProvider({ children }) {
     const Login = async (email, senha) => {
         await signInWithEmailAndPassword(auth, email, senha)
             .then((userCredential) => {
-                setUsuario(userCredential.user.email)
-                setUidUser(userCredential.user.uid)
-                console.log(usuario)
-                console.log(uidUser)
-                setLogado(true)
-
                 if (typeof window !== 'undefined') {
-                    localStorage.setItem('EstaLogado', logado)
-                    localStorage.setItem('UsuarioLogado', JSON.stringify(usuario))
-                    localStorage.setItem('UidLogado', JSON.stringify(uidUser))
-                }
+                    localStorage.setItem('EstaLogado', true)
+                    localStorage.setItem('UsuarioLogado', (userCredential.user.email))
+                    localStorage.setItem('UidLogado', (userCredential.user.uid))
 
+                    const estouLogado = localStorage.getItem('EstaLogado')
+                    console.log(estouLogado)
+                    if (estouLogado == 'true') {
+                        router.push('/')
+                    }
+                }
             })
             .catch((error) => {
                 console.log(error)
             })
-
-        if (logado == true) {
-            router.push('/')
-        }
 
     }
 
@@ -58,9 +53,7 @@ export default function AuthProvider({ children }) {
         await createUserWithEmailAndPassword(auth, info.email, info.senha)
             .then((userCredential) => {
                 cadastrado = true
-                console.log(`Cadastrado = ${cadastrado}`)
-                console.log(userCredential)
-
+                
                 //https://console.firebase.google.com/u/0/project/projeto-equipe-roca/firestore/data/~2Fusers~2F4GS0npNWsfZZq92DEfIBK12Yt8Q2?hl=pt-br
                 setDoc(doc(db, 'users', userCredential.user.uid), {
                     nomeCompleto: info.nomeCompleto,
@@ -71,8 +64,6 @@ export default function AuthProvider({ children }) {
             })
             .catch((error) => {
                 cadastrado = false
-                console.log(`Cadastrado = ${cadastrado}`)
-
                 console.log(error)
             })
 
@@ -82,14 +73,17 @@ export default function AuthProvider({ children }) {
     }
 
     const Logout = () => {
-        setLogado(false)
-        console.log(logado)
         if (typeof window !== 'undefined') {
+            setLogado(false)
+            console.log(logado)
+
             localStorage.setItem('EstaLogado', logado)
             setUsuario()
-            localStorage.setItem('UsuarioLogado', JSON.stringify(usuario))
+            localStorage.setItem('UsuarioLogado', '')
+            localStorage.setItem('UidLogado', '')
+
+            ChecarLogin()
         }
-        ChecarLogin()
     }
 
 

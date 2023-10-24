@@ -11,7 +11,7 @@ export default function Perfil() {
 
     const [infos, setInfos] = useState({})
 
-    const [pesos, setPesos] = useState([])
+    const [pesos, setPesos] = useState([{}])
 
     useEffect(() => {
         const userId = JSON.parse(localStorage.getItem('UidLogado'))
@@ -30,15 +30,15 @@ export default function Perfil() {
 
             querySnapshot.forEach((doc) => {
                 setPesos(doc.data())
+                console.log(doc.data())
             })
         }
 
         ReceberDados()
         ReceberEvolucao() 
-        console.log(pesos)
     }, [])
 
-    console.log(pesos)
+    //console.log(pesos)
     //console.log(infos)
 
     return (
@@ -72,7 +72,7 @@ export default function Perfil() {
                 <h1 className='self-center text-xl font-semibold mb-2'>Minha Evolução:</h1>
                 <div className='grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 px-8'>
                     <div className='cardTreinos'>
-                        <h1>Em breve...</h1>
+                        <h1>{JSON.stringify(pesos)}</h1>
                     </div>
                 </div>
             </div>

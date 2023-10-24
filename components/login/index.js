@@ -55,7 +55,7 @@ export default function Login() {
                             <input className='border border-gray-900 rounded-full py-1 px-4 cursor-pointer 
                             hover:bg-slate-900 hover:text-gray-100 transition duration-300' type='submit' value='Entrar' />
                         </div>
-                        <Link href='/cadastro' className='underline self-center text-blue-950'>Criar conta</Link>
+                        <Link href='/cadastro' className='underline self-center text-blue-950'>Ainda não tenho uma conta</Link>
                     </form>
                 </div>
             </div>
