@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .divInputs {
-    @apply w-full flex flex-col px-20 md:px-48 lg:px-64
+    @apply w-full flex flex-col md:px-40 lg:px-64
 }
 
 .divInputs:active {
