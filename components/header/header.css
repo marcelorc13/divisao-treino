@@ -19,5 +19,5 @@
 }
 
 #navItems {
-    @apply border border-gray-900 mx-24 rounded-3xl md:border-0 py-2
+    @apply border border-gray-900 rounded-3xl md:border-0 py-2
 }

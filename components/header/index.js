@@ -13,7 +13,11 @@ import { AuthContext } from '@/context/auth'
 
 export default function Header(props) {
 
-    const { Cadastro, Login, usuario, Logout } = useContext(AuthContext)
+    const { Cadastro, Login, usuario, Logout, ChecarLogin } = useContext(AuthContext)
+
+    useEffect(() => {
+        ChecarLogin()
+    }, [ChecarLogin])
 
     const abrirMenu = () => {
         const items = document.querySelector('#navItems')
@@ -65,14 +69,14 @@ export default function Header(props) {
 
 
     return (
-        <nav className="mt-8 md:px-20 md:py-8">
+        <nav className="mt-8 md:px-16 lg:px-24 md:py-8">
             <div className='flex text-center justify-center md:hidden'>
                 <button id='btnAbrir' className='text-2xl' value='abrir' onClick={abrirMenu}><GiHamburgerMenu /></button>
             </div>
 
             <div id='navItems' className='hidden md:flex md:flex-row justify-between items-center md:text-lg lg:text-xl font-semibold'>
                 <div className='text-center md:py-0'>
-                    <h1 className='text-xl md:text-2xl lg:text-4xl font-bold'>Equipe Roca</h1>
+                    <h1 className='text-xl md:text-2xl lg:text-3xl font-bold'>Equipe Roca</h1>
                 </div>
 
                 <div>
