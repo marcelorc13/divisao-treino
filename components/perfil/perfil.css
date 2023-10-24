@@ -19,3 +19,7 @@
 .cardTreinos h1 {
     @apply self-center
 }
+
+.cardTreinos p span {
+    @apply font-semibold
+}

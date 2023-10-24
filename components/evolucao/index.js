@@ -36,7 +36,7 @@ export default function Evolucao() {
     }
 
     useEffect(() => {
-        setUid(JSON.parse(localStorage.getItem('UidLogado')))
+        setUid(localStorage.getItem('UidLogado'))
     }, [])
 
     return (
@@ -54,7 +54,7 @@ export default function Evolucao() {
 
                 <div className='divInputs'>
                     <label htmlFor='peso'>Peso:</label>
-                    <input required className='inputsValores peso' onChange={HandleChange} type="text" id='peso' name="peso" placeholder="00.0" maxLength={5} />
+                    <input required className='inputsValores peso' onChange={HandleChange} type="text" id='peso' name="peso" placeholder="00.0 (Apenas Números)" maxLength={5} />
                 </div>
 
                 <div className='divInputs btn'>

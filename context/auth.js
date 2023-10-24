@@ -23,7 +23,6 @@ export default function AuthProvider({ children }) {
     const [logado, setLogado] = useState(false)
 
     const [usuario, setUsuario] = useState()
-    const [uidUser, setUidUser] = useState()
 
     const Login = async (email, senha) => {
         await signInWithEmailAndPassword(auth, email, senha)
@@ -34,13 +33,13 @@ export default function AuthProvider({ children }) {
                     localStorage.setItem('UidLogado', (userCredential.user.uid))
 
                     const estouLogado = localStorage.getItem('EstaLogado')
-                    console.log(estouLogado)
                     if (estouLogado == 'true') {
                         router.push('/')
                     }
                 }
             })
             .catch((error) => {
+                alert('Usuário ou Senha incorreto!')
                 console.log(error)
             })
 
@@ -53,7 +52,7 @@ export default function AuthProvider({ children }) {
         await createUserWithEmailAndPassword(auth, info.email, info.senha)
             .then((userCredential) => {
                 cadastrado = true
-                
+
                 //https://console.firebase.google.com/u/0/project/projeto-equipe-roca/firestore/data/~2Fusers~2F4GS0npNWsfZZq92DEfIBK12Yt8Q2?hl=pt-br
                 setDoc(doc(db, 'users', userCredential.user.uid), {
                     nomeCompleto: info.nomeCompleto,

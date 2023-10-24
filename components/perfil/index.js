@@ -11,13 +11,13 @@ export default function Perfil() {
 
     const [infos, setInfos] = useState({})
 
-    const [pesos, setPesos] = useState([{}])
+    const [pesos, setPesos] = useState([])
 
     useEffect(() => {
-        const userId = JSON.parse(localStorage.getItem('UidLogado'))
+        const userId = localStorage.getItem('UidLogado')
         setUid(userId)
 
-        const ReceberDados = async () => { 
+        const ReceberDados = async () => {
             const docSnapDados = await getDoc(doc(db, 'users', userId))
 
             const infosUser = docSnapDados.data()
@@ -28,17 +28,20 @@ export default function Perfil() {
             const q = query(collection(db, 'users', userId, 'pesos'))
             const querySnapshot = await getDocs(q)
 
+            const pesosArr = []
+
             querySnapshot.forEach((doc) => {
-                setPesos(doc.data())
-                console.log(doc.data())
+                pesosArr.push(doc.data())
             })
+
+            setPesos(pesosArr)
         }
 
         ReceberDados()
-        ReceberEvolucao() 
+        ReceberEvolucao()
     }, [])
 
-    //console.log(pesos)
+    console.log(pesos)
     //console.log(infos)
 
     return (
@@ -71,9 +74,13 @@ export default function Perfil() {
             <div className='flex flex-col justify-center'>
                 <h1 className='self-center text-xl font-semibold mb-2'>Minha Evolução:</h1>
                 <div className='grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 px-8'>
-                    <div className='cardTreinos'>
-                        <h1>{JSON.stringify(pesos)}</h1>
-                    </div>
+                    {pesos.map((peso, key) => (
+                        <div key={key} className='cardTreinos'>
+                            <p>Data: <span>{peso.peso.data}</span></p>
+                            <p>Peso: <span>{peso.peso.peso}Kg</span></p>
+                        </div>
+                    ))
+                    } 
                 </div>
             </div>
         </main>
