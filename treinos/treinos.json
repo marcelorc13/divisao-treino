@@ -1,0 +1,60 @@
+{
+    "treinos": [
+        {
+            "dia" : "Segunda-Feira",
+            "titulo": "Perna Completa",
+            "exercicios": [
+                {
+                    "exercicio": "Cadeira Flexora",
+                    "series": 3
+                },
+                {
+                    "exercicio": "Agachamento Hack",
+                    "series": 3
+                },
+                {
+                    "exercicio": "Cadeira Extensora",
+                    "series": 3
+                },
+                {
+                    "exercicio": "Sissy Squat",
+                    "series": 1
+                }
+            ]
+        },
+        {
+            "dia": "Terça-Feira",
+            "titulo": "Peito & Bíceps (Panturrilha)",
+            "exercicios": [
+                {
+                    "exercicio": "Supino Inclinado com Halteres",
+                    "series": 2
+                },
+                {
+                    "exercicio": "Voador Máquina",
+                    "series": 2
+                },
+                {
+                    "exercicio": "CrossOver Polia Alta",
+                    "series": 2
+                },
+                {
+                    "exercicio": "Flexão Puncho Cerrado",
+                    "series": 1
+                },
+                {
+                    "exercicio": "Rosca Direta com Halteres",
+                    "series": 2
+                },
+                {
+                    "exercicio": "Rosca no Banco Inclinado na Máquina",
+                    "series": 1
+                },
+                {
+                    "exercicio": "Panturrilha Sentado",
+                    "series": 3
+                }
+            ]
+        }
+    ]
+}

@@ -59,6 +59,7 @@ export default function Divisao() {
                         pathname: '/treino',
                         query: {
                             dia: 'Segunda-Feira',
+                            tag: 0,
                             id: 'segunda'
                         }
                     }}>
@@ -71,10 +72,11 @@ export default function Divisao() {
                         pathname: '/treino',
                         query: {
                             dia: 'Terça-Feira',
+                            tag: 1,
                             id: 'terca'
                         }
                     }}>
-                        Terça-Feira : Peito & Bíceps
+                        Terça-Feira : Peito & Bíceps (Panturrilha)
                     </Link>
                 </li>
                 <li className='dias'>

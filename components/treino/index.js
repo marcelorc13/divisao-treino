@@ -3,34 +3,38 @@
 import './treinos.css'
 
 import { useSearchParams } from 'next/navigation'
-import { useCallback, useEffect } from 'react'
-import { useState } from 'react'
+import { useCallback, useEffect, useContext, useState } from 'react'
+
+import { AuthContext } from '@/context/auth'
 
 import { BiArrowBack } from 'react-icons/bi'
 
-import Treinos from '@/treinos/treinos'
+import DataTreinos from '@/treinos/treinos.json'
+
+import Treinos from '@/treinos/treinos.js'
 import Link from 'next/link'
 
 export default function TreinoBody() {
 
+    const { Cadastro, Login, usuario, Logout, ChecarLogin } = useContext(AuthContext)
+
     useEffect(() => {
-        MostrarTreino();
-    })
+        ChecarLogin()
+    }, [ChecarLogin])
 
     const searchParams = useSearchParams()
 
     const dia = searchParams.get('dia')
     const id = searchParams.get('id')
+    const tag = searchParams.get('tag')
+
+    const data = DataTreinos.treinos
+    console.log(data[tag])
 
     const treino = JSON.stringify(Treinos.treinos[id].treino)
 
     const exercicios = Treinos.treinos[id].exercicios
     const exerciciosKey = Object.keys(exercicios)
-
-    const MostrarTreino = () => {
-        console.log(exercicios)
-        console.log(exerciciosKey)
-    }
 
 
     return (
