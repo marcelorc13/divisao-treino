@@ -116,7 +116,7 @@ const Treinos = {
                     series: 2
                 },
                 exercicio4: {
-                    exercicio: 'Tríceps Teste na Polia',
+                    exercicio: 'Tríceps Testa na Polia',
                     series: 3
                 },
                 exercicio5: {

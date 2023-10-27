@@ -1,7 +1,7 @@
 {
     "treinos": [
         {
-            "dia" : "Segunda-Feira",
+            "dia": "Segunda-Feira",
             "titulo": "Perna Completa",
             "exercicios": [
                 {
@@ -52,6 +52,106 @@
                 },
                 {
                     "exercicio": "Panturrilha Sentado",
+                    "series": 3
+                }
+            ]
+        },
+        {
+            "dia": "Quarta-Feira",
+            "titulo": "Costas & Ombro",
+            "exercicios": [
+                {
+                    "exercicio": "Remada Pronada com Peito Apoiado",
+                    "series": 2
+                },
+                {
+                    "exercicio": "Remada Neutra Unilateral na Máquina",
+                    "series": 2
+                },
+                {
+                    "exercicio": "Puxada Pronada Aberta",
+                    "series": 2
+                },
+                {
+                    "exercicio": "Puxada Triângulo",
+                    "series": 1
+                },
+                {
+                    "exercicio": "Elevação Lateral com Halteres",
+                    "series": 2
+                },
+                {
+                    "exercicio": "Crucifixo Invertido no Voador",
+                    "series": 1
+                }
+            ]
+        },
+        {
+            "dia": "Quinta-Feira",
+            "titulo": "Descanso (Panturrilha)",
+            "exercicios": [
+                {
+                    "exercicio": "Panturrilha Sentado",
+                    "series": 3
+                },
+                {
+                    "exercicio": "Panturrilha no Hack",
+                    "series": 3
+                }
+            ]
+        },
+        {
+            "dia": "Sexta-Feira",
+            "titulo": "Bíceps e Tríceps",
+            "exercicios": [
+                {
+                    "exercicio": "Rosca Direta na Barra W",
+                    "series": 2
+                },
+                {
+                    "exercicio": "Rosca no Banco Inclinado na Máquina",
+                    "series": 2
+                },
+                {
+                    "exercicio": "Rosca Scott Martelo",
+                    "series": 2
+                },
+                {
+                    "exercicio": "Tríceps Testa na Polia",
+                    "series": 3
+                },
+                {
+                    "exercicio": "Tríceps Corda Longa (Drop Mecânico TNF)",
+                    "series": 2
+                }
+            ]
+        },
+        {
+            "dia": "Sábado",
+            "titulo": "Ombro & Peito (Panturrilha)",
+            "exercicios": [
+                {
+                    "exercicio": "Crucifixo Invertido no Voador",
+                    "series": 1
+                },
+                {
+                    "exercicio": "Desenvolvimento com Halteres",
+                    "series": 2
+                },
+                {
+                    "exercicio": "Elevação Lateral na Polia",
+                    "series": 2
+                },
+                {
+                    "exercicio": "Crucifixo Inclinado com Halteres",
+                    "series": 2
+                },
+                {
+                    "exercicio": "Voador Máquina",
+                    "series": 2
+                },
+                {
+                    "exercicio": "Panturrilha no Hack",
                     "series": 3
                 }
             ]
