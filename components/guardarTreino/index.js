@@ -43,7 +43,7 @@ export default function GuardarTreino() {
     }
 
     useEffect(() => {
-        setUid(JSON.parse(localStorage.getItem('UidLogado')))
+        setUid((localStorage.getItem('UidLogado')))
     }, [])
 
     return (

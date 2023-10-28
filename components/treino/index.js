@@ -24,17 +24,11 @@ export default function TreinoBody() {
 
     const searchParams = useSearchParams()
 
-    const dia = searchParams.get('dia')
-    const id = searchParams.get('id')
     const tag = searchParams.get('tag')
 
-    const data = DataTreinos.treinos
-    console.log(data[tag])
+    const treino = DataTreinos.treinos[tag]
+    //console.log(treino)
 
-    const treino = JSON.stringify(Treinos.treinos[id].treino)
-
-    const exercicios = Treinos.treinos[id].exercicios
-    const exerciciosKey = Object.keys(exercicios)
 
 
     return (
@@ -42,13 +36,13 @@ export default function TreinoBody() {
             <div className='text-2xl md:text-3xl absolute left-4 top-4 md:left-12 lg:left-24' >
                 <Link href='/'><BiArrowBack className='hover:-translate-x-2 transition duration-300' /></Link>
             </div>
-            <h1 className='text-xl md:text-2xl text-center font-semibold'>{dia}</h1>
-            <h1 className='text-3xl md:text-4xl text-center font-bold'>{JSON.parse(treino)}</h1>
+            <h1 className='text-xl md:text-2xl text-center font-semibold'>{treino.dia}</h1>
+            <h1 className='text-3xl md:text-4xl text-center font-bold'>{treino.titulo}</h1>
             <div id='lista-exercicios'>
                 <ul className='w-full'>
-                    {exerciciosKey.map((key) => {
+                    {treino.exercicios.map((ex, key) => {
                         let serie = ''
-                        if (exercicios[key].series == 1) {
+                        if (ex.series == 1) {
                             serie = 'Série'
                         }
                         else {
@@ -57,8 +51,8 @@ export default function TreinoBody() {
 
                         return (
                             <li key={key}>
-                                {exercicios[key].exercicio}
-                                <p>{`${exercicios[key].series} ${serie}`}</p>
+                                {ex.exercicio}
+                                <p>{ex.series} {serie}</p>
                             </li>
                         )
                     })}

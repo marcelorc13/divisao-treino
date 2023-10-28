@@ -83,8 +83,8 @@ export default function Header(props) {
                     <ul id='navLista' className="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-4 py-4 md:py-0">
                         <Link href='/'><li id='btnDivisao'>Divisão</li></Link>
                         <Link href='/perfil'><li id='btnPerfil'>Perfil</li></Link>
-                        <Link href='/guardar-treino'><li id='btnGuardar' className='desenvolvendo'>Guardar Treino<BiLoaderCircle /></li></Link>
                         <Link href='evolucao'><li id='btnEvolucao'>Evolução</li></Link>
+                        <Link href='/guardar-treino'><li id='btnGuardar' className='desenvolvendo'>Guardar Treino<BiLoaderCircle /></li></Link>
                     </ul>
                 </div>
 

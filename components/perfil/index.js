@@ -41,7 +41,7 @@ export default function Perfil() {
         ReceberEvolucao()
     }, [])
 
-    console.log(pesos)
+    //console.log(pesos)
     //console.log(infos)
 
     return (

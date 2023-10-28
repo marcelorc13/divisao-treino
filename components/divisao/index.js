@@ -58,9 +58,7 @@ export default function Divisao() {
                     <Link href={{
                         pathname: '/treino',
                         query: {
-                            dia: 'Segunda-Feira',
                             tag: 0,
-                            id: 'segunda'
                         }
                     }}>
                         Segunda-Feira : Perna Completa
@@ -71,9 +69,7 @@ export default function Divisao() {
                     <Link href={{
                         pathname: '/treino',
                         query: {
-                            dia: 'Terça-Feira',
                             tag: 1,
-                            id: 'terca'
                         }
                     }}>
                         Terça-Feira : Peito & Bíceps (Panturrilha)
@@ -83,8 +79,7 @@ export default function Divisao() {
                     <Link href={{
                         pathname: '/treino',
                         query: {
-                            dia: 'Quarta-Feira',
-                            id: 'quarta'
+                            tag: 2,
                         }
                     }}>
                         Quarta-Feira : Costas & Ombro
@@ -94,8 +89,7 @@ export default function Divisao() {
                     <Link href={{
                         pathname: '/treino',
                         query: {
-                            dia: 'Quinta-Feira',
-                            id: 'quinta'
+                            tag: 3,
                         }
                     }}>
                         Quinta-Feira : Descanso (Panturrilha)
@@ -105,8 +99,7 @@ export default function Divisao() {
                     <Link href={{
                         pathname: '/treino',
                         query: {
-                            dia: 'Sexta-Feira',
-                            id: 'sexta'
+                            tag: 4,
                         }
                     }}>
                         Sexta-Feira : Bíceps & Tríceps
@@ -116,8 +109,7 @@ export default function Divisao() {
                     <Link href={{
                         pathname: '/treino',
                         query: {
-                            dia: 'Sábado',
-                            id: 'sabado'
+                            tag: 5,
                         }
                     }}>
                         Sábado : Ombro & Peito (Panturrilha)
