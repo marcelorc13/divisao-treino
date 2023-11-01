@@ -18,6 +18,18 @@
     @apply opacity-80
 }
 
-#navItems {
-    @apply border border-gray-900 rounded-3xl md:border-0 py-2
+#btnLogout {
+    @apply relative md:text-xl text-center
+}
+
+#btnLogout:hover {
+    @apply md:-translate-x-0.5 transition duration-300
+}
+
+#btnLogout::after:hover {
+    @apply md:opacity-80
+}
+
+#btnLogout::after {
+    @apply content-['Logout'] pointer-events-none text-sm absolute top-4 -left-3 opacity-0 duration-700
 }

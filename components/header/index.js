@@ -76,7 +76,7 @@ export default function Header(props) {
 
             <div id='navItems' className='hidden md:flex md:flex-row justify-between items-center md:text-lg lg:text-xl font-semibold'>
                 <div className='text-center md:py-0'>
-                    <h1 className='text-xl md:text-2xl lg:text-3xl font-bold'>Equipe Roca</h1>
+                    <Link href='/'><h1 className='text-xl md:text-2xl lg:text-3xl font-bold'>Equipe Roca</h1></Link>
                 </div>
 
                 <div>
